@@ -1,0 +1,13 @@
+
+<small *ngIf = 'invalidLogin'> {{errorMessage}}</small>
+
+
+<div>
+
+UserName : <input type = "text" name = "UserName"  [(ngModel)] = "UserName" > 
+Password : <input type = "password" name = "password" [(ngModel)] = "password"> 
+
+UserName : {{UserName}}
+<button (click) = handleLogin() >Login</button>
+
+</div>
