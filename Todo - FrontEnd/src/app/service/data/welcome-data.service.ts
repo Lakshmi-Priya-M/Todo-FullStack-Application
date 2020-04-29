@@ -1,9 +1,8 @@
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export class HelloWorldBean {
-  constructor(public message : string)
-  {
+  constructor(public message: string) {
   }
 }
 @Injectable({
@@ -12,14 +11,14 @@ export class HelloWorldBean {
 export class WelcomeDataService {
   // Http service is used to handle get,post,delete request
   constructor(private http: HttpClient) { }
-  
-  executeHelloWorldBeanService(){
+
+  executeHelloWorldBeanService() {
     // the response structure should be of object HelloWorldBean
     return this.http.get<HelloWorldBean>("http://localhost:8080/hello-world-bean");
     // console.log("Execute Hello World Bean Service");
   }
 
-  executeHelloWorldServiceWithPathVariable(name){
+  executeHelloWorldServiceWithPathVariable(name) {
     // the response structure should be of object HelloWorldBean
     return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world/path-variable/${name}`);
     // console.log("Execute Hello World Bean Service");
